@@ -5,14 +5,15 @@ import aurelienribon.tweenengine.TweenAccessor;
 /**
  * @author Aurelien Ribon | http://www.aurelienribon.com/
  */
-public class MutableInteger extends Number implements TweenAccessor<MutableInteger> {
-	private int value;
+public class MutableFloat extends Number implements TweenAccessor<MutableFloat> {
+	private static final long serialVersionUID = 1L;
+	private float value;
 
-	public MutableInteger(int value) {
+	public MutableFloat(float value) {
 		this.value = value;
 	}
 
-	public void setValue(int value) {
+	public void setValue(float value) {
 		this.value = value;
 	}
 
@@ -22,13 +23,13 @@ public class MutableInteger extends Number implements TweenAccessor<MutableInteg
 	@Override public double doubleValue() {return (double) value;}
 
 	@Override
-	public int getValues(MutableInteger target, int tweenType, float[] returnValues) {
+	public int getValues(MutableFloat target, int tweenType, float[] returnValues) {
 		returnValues[0] = target.value;
 		return 1;
 	}
 
 	@Override
-	public void setValues(MutableInteger target, int tweenType, float[] newValues) {
-		target.value = (int) newValues[0];
+	public void setValues(MutableFloat target, int tweenType, float[] newValues) {
+		target.value = newValues[0];
 	}
 }
