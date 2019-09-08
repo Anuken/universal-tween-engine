@@ -33,7 +33,7 @@ artifacts {
 }
 
 dependencies {
-    compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+    
 }
 
 test {
